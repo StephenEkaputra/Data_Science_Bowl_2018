@@ -42,3 +42,17 @@ For the data augmentation, we only used some of vertical and horizontal flip, we
 In proposed 4, we used the same parameter as proposed 3 but we changed the backbone to Resnet101 and trained using the coco initial weight. We could see the parameter in Table X. Other than that, we set the training epoch to 80 (20 epochs for heads layer and 60 epochs for all layers). While training, the weights per epoch were saved. We got the best result on 75th epoch with mAP score of 0.53678.
 
 The reason why we chose the weight on 75th epoch was because it has the lowest training loss as well as validation loss. The result was proved in Table 2. We found that the validation dataset has high similarity with test dataset because decreasing validation loss made better mAP test and vice versa.
+
+# Results
+
+|   Methods  |   mAP  |
+| ------------- | ------------- |
+| Unet (Proposed 1)  | 0.20102  |
+| Unet + VGG16 (Proposed 2)  | 0.21382 |
+| Baseline  | 0.43186 |
+| Mask RCNN + Resnet50 + Weak Augmentation (Proposed 3)  | 0.45707  |
+| Mask RCNN + Resnet50 + Strong Augmentation (Addition)  | 0.48939  |
+| Mask RCNN + Resnet101 + Weak Augmentation (Addition)  | 0.46878  |
+| Mask RCNN + Resnet101 + Strong Augmentation (Proposed 4)  | **0.53678**  |
+
+
