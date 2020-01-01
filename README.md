@@ -55,4 +55,4 @@ The reason why we chose the weight on 75th epoch was because it has the lowest t
 | Mask RCNN + Resnet101 + Weak Augmentation (Addition)  | 0.46878  |
 | Mask RCNN + Resnet101 + Strong Augmentation (Proposed 4)  | **0.53678**  |
 
-![Gif](https://user-images.githubusercontent.com/31305502/71643319-4ab0d780-2cf3-11ea-92cd-526074ee1c26.gif | width=300 )
+![Gif](https://user-images.githubusercontent.com/31305502/71643319-4ab0d780-2cf3-11ea-92cd-526074ee1c26.gif)
