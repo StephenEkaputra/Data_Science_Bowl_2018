@@ -20,10 +20,23 @@ We set the learning rate to 0.00003 to make sure that the training process worke
 
 For the data augmentation, we only used some of vertical and horizontal flip, weak rotate augmentation, multiply, and gaussian blur. The main contribution of this proposal is we used Mask RCNN, Resnet50 backbone, and weak augmentation. We trained the model with 40 epochs (20 epochs for heads layer and the other 20 epochs for all layers). ImageNet model was used as initial weight. When we tested the result, we got mAP of 0.45707 on 40th epoch.
 
-| Parameters  | Proposed 3 |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+|   Parameters  |   Proposed 3  |   Proposed 4  |
+| ------------- | ------------- | ------------- |
+| Learning rate  | 0.00003  | 0.00003  |
+| Momentum  | 0.9  | 0.9  |
+| Weight Decay  | 0.0001  | 0.0001  |
+| Mean Pixel  | [123.7, 116.8, 103.9]  | [123.7, 116.8, 103.9]  |
+| Detection Min Confidence  | 0.9  | 0.9  |
+| Detection NMS Threshold  | 0.2  | 0.2  |
+| RPN NMS Threshold  | 0.9  | 0.9  |
+| RPN Anchor Scale  | [8, 16, 32, 64, 128]  | [8, 16, 32, 64, 128] |
+| RPN Train Anchors Per Image  | 256 | 256  |
+| Image Min DIM  | 512  | 512 |
+| Image Max DIM  | 512  | 512 |
+| Backbone  | Resnet50  | Resnet101  |
+| Model  | ImageNet  | Coco |
+| Use Mini Mask  | True (56, 56)  | True (56, 56)  |
+| Data Augmentation  | Some of (Flip Vertical and Horizontal (0.5), One of (Multi Rotate (90, 180, 270), Multiply, Gaussian Blur))  | Multi Flip Vertical and Horizontal, Multi Rotate (45, 90, 180, 270), Scale 50%-150%, Sometimes (Scale 80%-120%, Translate, Shear)  |
 
 # Proposed 4: Mask RCNN + Resnet101 + Strong Augmentation
 In proposed 4, we used the same parameter as proposed 3 but we changed the backbone to Resnet101 and trained using the coco initial weight. We could see the parameter in Table X. Other than that, we set the training epoch to 80 (20 epochs for heads layer and 60 epochs for all layers). While training, the weights per epoch were saved. We got the best result on 75th epoch with mAP score of 0.53678.
